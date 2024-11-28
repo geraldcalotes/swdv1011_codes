@@ -11,21 +11,23 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-	appBar: AppBar(
-	  title: Text('Flutter Multiple Text Widgets'),
-	),
-        body: Container(
-	  height: 800,
-	  child: Column(
-	    children:[
-		Container(
-		  height:200,
-	          color: Colors.red,
-		),//Container
-	    ],//children
-	   ),//Column
-	),//Container
-       ),//Scaffold
-    );//MaterialApp
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          title: const Text('Flutter Layout',style:TextStyle(fontSize:24),
+          )
+        ),
+      body: const SizedBox(width: double.maxFinite,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [Text('Item 1',style:TextStyle(fontSize: 45)),Text('Item 2',style:TextStyle(fontSize: 45))],),
+      ),
+      drawer:const Drawer(),
+      floatingActionButton: const FloatingActionButton(onPressed: null,
+      child:Icon(Icons.add)
+      ),
+      bottomNavigationBar: BottomAppBar(color: Colors.red,),
+      ), //Scaffold
+    ); //MaterialApp
   }
 }
